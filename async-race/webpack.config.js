@@ -37,6 +37,7 @@ const baseConfig = {
         new ESLintWebpackPlugin({ extensions: ['ts', 'js'] }),
         new CopyPlugin({
             patterns: [
+                { from: 'src/API', to: './API' },
                 { from: 'src/assets', to: './assets' },
                 { from: 'src/components', to: './components' },
                 { from: 'src/data', to: './data' },
@@ -44,7 +45,6 @@ const baseConfig = {
                 { from: 'src/layouts', to: './layouts' },
                 { from: 'src/pages', to: './pages' },
                 { from: 'src/services', to: './services' },
-                { from: 'src/netlify-config', to: './' },
             ],
         }),
     ],

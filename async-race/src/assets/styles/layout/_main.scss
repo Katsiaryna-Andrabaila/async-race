@@ -1,0 +1,59 @@
+.main {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.create-block,
+.update-block {
+    display: flex;
+    align-items: center;
+}
+
+.garage-header {
+    font-size: 3rem;
+    color: $color-additional;
+}
+
+.page-number {
+    margin: 1rem 0;
+}
+
+.car-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.car-name {
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.drive-block {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    width: 100%;
+    margin: 2rem 0;
+    border-bottom: 0.3rem dotted $color-additional;
+}
+
+.car {
+    width: 8rem;
+}
+
+.flag {
+    position: absolute;
+    right: 13rem;
+
+    width: 5rem;
+}
+
+.page-buttons {
+    margin-top: 2rem;
+}
+
