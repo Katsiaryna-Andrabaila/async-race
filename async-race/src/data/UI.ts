@@ -1,4 +1,5 @@
 const UI: { readonly [x: string]: string } = {
+    // garage-page
     headerButton1: 'GARAGE',
     headerButton2: 'WINNERS',
 
@@ -23,6 +24,15 @@ const UI: { readonly [x: string]: string } = {
 
     githubLinkText: 'Katsiaryna Andrabaila',
     footerYear: '2023',
+
+    // winners-page
+    winnersHeader: 'Winners ',
+
+    numberField: 'Number',
+    carField: 'Car',
+    nameField: 'Name',
+    winsField: 'Wins',
+    timeField: 'Best time (seconds)',
 };
 
 export default UI;

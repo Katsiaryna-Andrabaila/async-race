@@ -336,6 +336,27 @@ body {
   text-align: center;
 }
 
+.table-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 4fr;
+  width: 50%;
+  background-color: #4889e5;
+  font-size: 2rem;
+  color: #2a1267;
+}
+
+.winner-line {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr 4fr;
+  width: 50%;
+  font-size: 2rem;
+  color: #2a1267;
+}
+
+.winner-image {
+  width: 4rem;
+}
+
 .button {
   width: 9.7rem;
   padding: 0.5rem;

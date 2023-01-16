@@ -1,6 +1,7 @@
 import UI from '../data/UI';
 import drawGarageControls from './drawGarageControls';
 import drawRaceLines from './drawRaceLines';
+import garage from '../data/garage';
 
 const drawGarage = () => {
     document.querySelector('main')?.remove();
@@ -14,7 +15,7 @@ const drawGarage = () => {
 
     const garageHeader = document.createElement('h1');
     garageHeader.classList.add('garage-header');
-    garageHeader.textContent = UI.garageHeader;
+    garageHeader.textContent = `${UI.garageHeader}(${garage.length})`;
 
     const pageNumber = document.createElement('h3');
     pageNumber.classList.add('page-number');

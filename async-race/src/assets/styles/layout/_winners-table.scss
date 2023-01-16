@@ -1,0 +1,27 @@
+
+
+.table-fields {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 4fr;
+
+    width: 50%;
+
+    background-color: $color-blue;
+
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.winner-line {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 4fr;
+
+    width: 50%;
+
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.winner-image {
+    width: 4rem;
+}
