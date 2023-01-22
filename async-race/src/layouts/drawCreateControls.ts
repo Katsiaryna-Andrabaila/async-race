@@ -1,15 +1,15 @@
 import UI from '../data/UI';
 
 const drawCreateControls = (parent: HTMLElement) => {
-    const createBlock = document.createElement('div');
+    const createBlock = document.createElement('form');
     createBlock.classList.add('create-block');
 
     const createInput = document.createElement('input');
-    createInput.classList.add('input', 'car-input');
+    createInput.classList.add('input', 'car-input', 'car-create-input');
     createInput.type = 'text';
 
     const createColor = document.createElement('input');
-    createColor.classList.add('input', 'color-input');
+    createColor.classList.add('input', 'color-input', 'color-create-input');
     createColor.type = 'color';
 
     const createBtn = document.createElement('button');

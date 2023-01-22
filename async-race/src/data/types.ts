@@ -4,8 +4,30 @@ export type Car = {
     id: number;
 };
 
+export type CarsOnPage = {
+    items: Car[];
+    amount: string | null;
+};
+
+export type NewCar = Omit<Car, 'id'>;
+
 export type Winner = {
     id: number;
     wins: number;
     time: number;
+};
+
+export enum Path {
+    garage = '/garage',
+    engine = '/engine',
+    winners = '/winners',
+}
+
+export interface State {
+    page: number;
+    raceAnimationIDs: RaceAnimationIDs;
+}
+
+export type RaceAnimationIDs = {
+    [key: number]: number;
 };

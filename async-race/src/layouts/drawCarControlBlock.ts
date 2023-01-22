@@ -1,6 +1,7 @@
+import { Car } from '../data/types';
 import UI from '../data/UI';
 
-const drawCarControlBlock = (parent: HTMLElement) => {
+const drawCarControlBlock = async (parent: HTMLElement, car: Car) => {
     const carControlBlock = document.createElement('div');
     carControlBlock.classList.add('car-controls');
 
@@ -14,7 +15,7 @@ const drawCarControlBlock = (parent: HTMLElement) => {
 
     const carName = document.createElement('p');
     carName.classList.add('car-name');
-    carName.textContent = 'Tesla';
+    carName.textContent = car.name;
 
     carControlBlock.append(selectBtn, removeBtn, carName);
 

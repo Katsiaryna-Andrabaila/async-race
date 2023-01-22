@@ -1,4 +1,6 @@
 const UI: { readonly [x: string]: string } = {
+    errorMessage: 'Error with your request!',
+
     // garage-page
     headerButton1: 'GARAGE',
     headerButton2: 'WINNERS',
@@ -10,12 +12,12 @@ const UI: { readonly [x: string]: string } = {
     generateButton: 'GENERATE CARS',
 
     garageHeader: 'Garage ',
-    pageNumber: 'Page ',
+    pageNumber: 'Page #',
 
     selectButton: 'SELECT',
     removeButton: 'REMOVE',
     engineButton: 'A',
-    driveButton: 'B',
+    stopButton: 'B',
     carAltText: 'Car-image',
     flagAltText: 'Finish-point',
 

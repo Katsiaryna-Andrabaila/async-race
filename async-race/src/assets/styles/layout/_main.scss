@@ -3,7 +3,7 @@
     flex-direction: column;
 
     width: 100%;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
 
 .create-block,
@@ -13,12 +13,24 @@
 }
 
 .garage-header {
-    font-size: 3rem;
+    margin: 2rem 0 1rem;
+
+    font-size: 2rem;
     color: $color-additional;
 }
 
 .page-number {
-    margin: 1rem 0;
+    margin: 0;
+
+    font-size: 1.8rem;
+}
+
+.race-lines {
+    min-height: 40rem;
+}
+
+.car-item {
+    margin: 0.5rem 0;
 }
 
 .car-controls {
@@ -28,7 +40,7 @@
 }
 
 .car-name {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: $color-additional;
 }
 
@@ -38,19 +50,20 @@
     align-items: flex-end;
 
     width: 100%;
-    margin: 2rem 0;
     border-bottom: 0.3rem dotted $color-additional;
 }
 
 .car {
     width: 8rem;
+
+    transition-timing-function: linear;
 }
 
 .flag {
     position: absolute;
     right: 13rem;
 
-    width: 5rem;
+    width: 4rem;
 }
 
 .page-buttons {
