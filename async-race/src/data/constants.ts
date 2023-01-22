@@ -8,3 +8,5 @@ export const LIMITS_PER_PAGES: { readonly [x: string]: number } = {
 };
 
 export const defaultColor = '#000000';
+
+export const MILLISECONDS_IN_SECOND = 1000;

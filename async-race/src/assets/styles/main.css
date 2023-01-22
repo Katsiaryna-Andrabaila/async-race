@@ -218,6 +218,7 @@ body {
   }
 }
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -232,7 +233,7 @@ body {
 }
 
 .garage-header {
-  margin: 2rem 0 1rem;
+  margin: 1rem 0;
   font-size: 2rem;
   color: #2a1267;
 }
@@ -284,13 +285,30 @@ body {
   margin-top: 2rem;
 }
 
+.winner-message {
+  display: none;
+}
+
+.visible {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  color: rgb(219, 78, 78);
+  transform: translate(-50%, 0);
+}
+
 .header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background-color: rgba(69, 179, 252, 0.702);
 }
 
@@ -299,7 +317,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   gap: 2rem;
   background-color: rgba(69, 179, 252, 0.702);
 }
@@ -421,6 +439,10 @@ body {
 .stop-button:hover {
   background: none;
   color: #2a1267;
+}
+
+.page-buttons {
+  margin-top: 0.5rem;
 }
 
 .inactive {

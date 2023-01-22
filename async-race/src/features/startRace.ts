@@ -11,14 +11,15 @@ const startRace = async (btn: HTMLButtonElement) => {
 
     const cars = await getCars(state.page);
     const carsOnPage = <NodeListOf<HTMLDivElement>>document.querySelectorAll('.car');
-    const promises: Promise<{ velocity: number; distance: number }>[] = [];
-    cars.items.forEach(async (el) => promises.push(startEngine(el.id)));
-    Promise.all(promises).then(() => {
+    let targetCar = carsOnPage[0];
+    const startPromises: Promise<{ velocity: number; distance: number }>[] = [];
+    cars.items.forEach(async (el) => startPromises.push(startEngine(el.id)));
+    Promise.all(startPromises).then(() => {
         disableStartButtons();
         cars.items.forEach(async (el) => {
-            const startResponse = await promises[cars.items.indexOf(el)];
+            const startResponse = await startPromises[cars.items.indexOf(el)];
             const carTime = Math.round(startResponse.distance / startResponse.velocity);
-            let targetCar = carsOnPage[0];
+
             carsOnPage.forEach((item) => {
                 if (item.getAttribute('data-car-img-id') === el.id.toString()) {
                     targetCar = item;
@@ -29,10 +30,12 @@ const startRace = async (btn: HTMLButtonElement) => {
             if (flag instanceof HTMLImageElement) {
                 animateCar(el.id, targetCar, flag, carTime);
             }
+
             const driveResponse = await driveEngine(el.id);
             if (!driveResponse.success) {
                 window.cancelAnimationFrame(state.raceAnimationIDs[el.id]);
             }
+
             if (btn.nextSibling instanceof HTMLButtonElement) {
                 btn.nextSibling.classList.remove('inactive');
                 btn.nextSibling.removeAttribute('disabled');

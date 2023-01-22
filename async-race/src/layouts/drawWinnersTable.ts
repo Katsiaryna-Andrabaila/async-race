@@ -27,10 +27,10 @@ const drawWinnersTable = () => {
     const pageButtons = document.createElement('div');
     pageButtons.classList.add('page-buttons');
     const prevBtn = document.createElement('button');
-    prevBtn.classList.add('button', 'prev-page-button');
+    prevBtn.classList.add('button', 'winners-prev-page-button');
     prevBtn.textContent = UI.prevButton;
     const nextBtn = document.createElement('button');
-    nextBtn.classList.add('button', 'next-page-button');
+    nextBtn.classList.add('button', 'winners-next-page-button');
     nextBtn.textContent = UI.nextButton;
     pageButtons.append(prevBtn, nextBtn);
     main.append(table, pageButtons);
