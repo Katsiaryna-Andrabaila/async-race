@@ -3,6 +3,7 @@ import { State } from './types';
 const state: State = {
     page: 1,
     raceAnimationIDs: {},
+    winnerPage: 1,
 };
 
 /* let cars: Car[] = [];

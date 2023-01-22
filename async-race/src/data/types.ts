@@ -17,6 +17,11 @@ export type Winner = {
     time: number;
 };
 
+export type WinnersOnPage = {
+    items: Winner[];
+    amount: string | null;
+};
+
 export enum Path {
     garage = '/garage',
     engine = '/engine',
@@ -26,6 +31,7 @@ export enum Path {
 export interface State {
     page: number;
     raceAnimationIDs: RaceAnimationIDs;
+    winnerPage: number;
 }
 
 export type RaceAnimationIDs = {

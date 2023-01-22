@@ -1,5 +1,6 @@
 import getCars from '../API/getCars';
 import state from '../data/state';
+import processWinner from './processWinner';
 import showWinnerMessage from './showWinnerMessage';
 
 const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageElement, time: number) => {
@@ -11,10 +12,10 @@ const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageEl
     }
     let start = 0;
     const cars = await getCars(state.page);
-    let name = '';
+    let targetCar = cars.items[0];
     cars.items.forEach((el) => {
         if (el.id === id) {
-            name = el.name;
+            targetCar = el;
         }
     });
     const step = (timestamp: number) => {
@@ -28,14 +29,12 @@ const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageEl
         if (backDistance < distanceToDrive) {
             animationID = window.requestAnimationFrame(step);
             state.raceAnimationIDs[id] = animationID;
-        } else if (name) {
-            showWinnerMessage(name, time);
+        } else if (targetCar) {
+            showWinnerMessage(targetCar.name, time);
+            processWinner(targetCar, time);
         }
     };
-
     window.requestAnimationFrame(step);
-
-    console.log(state);
 };
 
 export default animateCar;
