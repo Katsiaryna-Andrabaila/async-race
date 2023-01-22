@@ -8,6 +8,8 @@ import driveCar from './driveCar';
 import stopCar from './stopCar';
 import drawFooter from '../layouts/drawFooter';
 import createCarListener from './createCarListener';
+import drawNextPage from './drawNextPage';
+import drawPreviousPage from './drawPreviousPage';
 
 const act = (event: Event) => {
     const { target } = event;
@@ -38,6 +40,12 @@ const act = (event: Event) => {
         }
         if (target.classList.contains('stop-button')) {
             stopCar(Number(id), target);
+        }
+        if (target.classList.contains('next-page-button')) {
+            drawNextPage(target);
+        }
+        if (target.classList.contains('prev-page-button')) {
+            drawPreviousPage(target);
         }
     }
 };
