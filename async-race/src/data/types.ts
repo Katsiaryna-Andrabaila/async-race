@@ -11,6 +11,11 @@ export type CarsOnPage = {
 
 export type NewCar = Omit<Car, 'id'>;
 
+export type RaceParams = {
+    velocity: number;
+    distance: number;
+};
+
 export type Winner = {
     id: number;
     wins: number;

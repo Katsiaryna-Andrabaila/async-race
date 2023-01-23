@@ -1,4 +1,4 @@
-import getCars from '../API/getCars';
+import getCar from '../API/getCar';
 import state from '../data/state';
 import showWinnerMessage from './showWinnerMessage';
 
@@ -10,13 +10,8 @@ const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageEl
         distanceToDrive = flag.offsetLeft - car.offsetLeft + flag.width;
     }
     let start = 0;
-    const cars = await getCars(state.page);
-    let targetCar = cars.items[0];
-    cars.items.forEach((el) => {
-        if (el.id === id) {
-            targetCar = el;
-        }
-    });
+    const targetCar = await getCar(id);
+
     const step = (timestamp: number) => {
         if (!start) start = timestamp;
         const progress = timestamp - start;
