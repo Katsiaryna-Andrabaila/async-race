@@ -2,8 +2,10 @@ import getCars from '../API/getCars';
 import state from '../data/state';
 import disableStopButtons from './disableStopButtons';
 import stopEngine from '../API/stopEngine';
+import drivingCars from '../data/drivingCars';
 
 const resetRace = async (btn: HTMLButtonElement) => {
+    drivingCars.length = 0;
     btn.setAttribute('disabled', 'disabled');
     btn.classList.add('inactive');
 

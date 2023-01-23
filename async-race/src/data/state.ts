@@ -6,21 +6,10 @@ const state: State = {
     winnerPage: 1,
     sort: '',
     order: '',
+    createInputText: '',
+    createColor: '',
+    updateInputText: '',
+    updateColor: '',
 };
-
-/* let cars: Car[] = [];
-let carsAmount: string | null = '';
-// const updatedBody: NewCar = {};
-(async () => {
-    const response = await getCars(1);
-    cars = response.items;
-    carsAmount = response.amount;
-})();
-
-const state = {
-    cars,
-    carsAmount,
-    updatedBody: {},
-}; */
 
 export default state;

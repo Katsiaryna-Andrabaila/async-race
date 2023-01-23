@@ -6,12 +6,10 @@ import actWinners from './features/actWinners';
 
 window.addEventListener('beforeunload', setLocalStorage);
 
-window.addEventListener('load', getLocalStorage);
-
 window.addEventListener('hashchange', routePages);
+
+getLocalStorage().then(() => routePages());
 
 window.addEventListener('click', actGarage);
 
 window.addEventListener('click', actWinners);
-
-routePages();

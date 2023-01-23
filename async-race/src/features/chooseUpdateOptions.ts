@@ -2,6 +2,7 @@ import updateCar from '../API/updateCar';
 import { NewCar } from '../data/types';
 import drawFooter from '../layouts/drawFooter';
 import drawGarage from '../layouts/drawGarage';
+import state from '../data/state';
 
 const chooseUpdateOptions = async (
     event: Event,
@@ -13,6 +14,8 @@ const chooseUpdateOptions = async (
     const carName = carInput;
     const carColor = colorInput;
     if (target instanceof HTMLButtonElement) {
+        state.updateInputText = carName.value;
+        state.updateColor = carColor.value;
         const body: NewCar = { name: carName.value, color: carColor.value };
         console.log(body, carName.value, carColor.value);
         updateCar(id, body);

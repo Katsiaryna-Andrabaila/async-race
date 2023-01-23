@@ -39,6 +39,10 @@ export interface State {
     winnerPage: number;
     sort: string;
     order: string;
+    createInputText: string;
+    createColor: string;
+    updateInputText: string;
+    updateColor: string;
 }
 
 export type RaceAnimationIDs = {

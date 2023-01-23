@@ -17,7 +17,7 @@ const stopCar = async (id: number, btn: HTMLButtonElement) => {
     }
 
     const winnerMessage = <HTMLParagraphElement>document.querySelector('.winner-message');
-    winnerMessage.remove();
+    if (winnerMessage) winnerMessage.remove();
 
     const stopButtons = <NodeListOf<HTMLButtonElement>>document.querySelectorAll('.stop-button');
     const stopButtonsArray: HTMLButtonElement[] = [];

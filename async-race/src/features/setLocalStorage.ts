@@ -1,4 +1,8 @@
+import state from '../data/state';
+
 const setLocalStorage = () => {
-    console.log(1);
+    const stateJson = JSON.stringify(state);
+    localStorage.setItem('state-andrabaila_e', stateJson);
 };
+
 export default setLocalStorage;

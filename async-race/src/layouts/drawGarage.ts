@@ -4,8 +4,10 @@ import drawRaceLines from './drawRaceLines';
 import getCars from '../API/getCars';
 import state from '../data/state';
 import drawPageButtons from './drawPageButtons';
+import drivingCars from '../data/drivingCars';
 
 const drawGarage = async () => {
+    drivingCars.length = 0;
     document.querySelector('main')?.remove();
     document.querySelector('footer')?.remove();
     const main = document.createElement('main');
