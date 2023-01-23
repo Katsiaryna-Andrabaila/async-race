@@ -9,7 +9,6 @@ const getWinners = async (page: number, limit = LIMITS_PER_PAGES.winnersLimitPer
             items: await response.json(),
             amount: response.headers.get('X-Total-Count'),
         };
-        console.log(winners.amount);
         return winners;
     } catch {
         throw new Error(UI.errorMessage);

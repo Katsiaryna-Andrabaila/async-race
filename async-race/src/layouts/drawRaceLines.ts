@@ -34,6 +34,7 @@ const drawRaceLines = async (parent: HTMLDivElement) => {
         const flag = document.createElement('img');
         flag.classList.add('flag');
         flag.src = './assets/icons/flag.svg';
+
         driveBlock.append(engineBtn, stopBtn, car, flag);
         carItem.append(driveBlock);
         parent.append(carItem);

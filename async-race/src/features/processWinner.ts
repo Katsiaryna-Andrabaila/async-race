@@ -5,7 +5,6 @@ import updateWinner from '../API/updateWinner';
 import { Car } from '../data/types';
 
 const processWinner = async (car: Car, time: number) => {
-    console.log(car);
     const newTime = Number((time / 1000).toFixed(2));
     const body = { id: car.id, wins: 1, time: newTime };
     const winnerStatus = await getWinnerStatus(car.id);

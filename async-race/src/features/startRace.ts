@@ -12,9 +12,8 @@ const startRace = async (btn: HTMLButtonElement) => {
     btn.classList.add('inactive');
     const winnersBtn = <HTMLButtonElement>document.querySelector('.winners-button');
     winnersBtn.disabled = true;
-
     const cars = await getCars(state.page);
-    const carsOnPage = <NodeListOf<HTMLDivElement>>document.querySelectorAll('.car');
+    const carsImagesOnPage = <NodeListOf<HTMLDivElement>>document.querySelectorAll('.car');
     const startPromises: Promise<RaceParams>[] = [];
     cars.items.forEach(async (el) => startPromises.push(startEngine(el.id)));
     Promise.all(startPromises).then(() => {
@@ -23,8 +22,8 @@ const startRace = async (btn: HTMLButtonElement) => {
             cars.items.forEach(async (el) => {
                 const startResponse = await startPromises[cars.items.indexOf(el)];
                 const carTime = Math.round(startResponse.distance / startResponse.velocity);
-                let targetCar = carsOnPage[0];
-                carsOnPage.forEach((item) => {
+                let targetCar = carsImagesOnPage[0];
+                carsImagesOnPage.forEach((item) => {
                     if (item.getAttribute('data-car-img-id') === el.id.toString()) {
                         targetCar = item;
                     }
@@ -37,8 +36,7 @@ const startRace = async (btn: HTMLButtonElement) => {
                     window.cancelAnimationFrame(state.raceAnimationIDs[el.id]);
                 }
                 drivingCars.push(el);
-                console.log(drivingCars);
-                if (drivingCars.length === carsOnPage.length) {
+                if (drivingCars.length === carsImagesOnPage.length) {
                     if (btn.nextSibling instanceof HTMLButtonElement) {
                         btn.nextSibling.classList.remove('inactive');
                         btn.nextSibling.removeAttribute('disabled');

@@ -10,7 +10,7 @@ const generateCars = async () => {
     for (let i = 0; i < GENERATED_AMOUNT; i += 1) {
         array.push({ name: getRandomModel(), color: getRandomColor() });
     }
-    console.log(array);
+
     array.forEach(async (el) => {
         createCar(el);
     });

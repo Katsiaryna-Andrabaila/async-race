@@ -1,7 +1,6 @@
 const UI: { readonly [x: string]: string } = {
     errorMessage: 'Error with your request!',
 
-    // garage-page
     headerButton1: 'GARAGE',
     headerButton2: 'WINNERS',
 
@@ -27,7 +26,6 @@ const UI: { readonly [x: string]: string } = {
     githubLinkText: 'Katsiaryna Andrabaila',
     footerYear: '2023',
 
-    // winners-page
     winnersHeader: 'Winners ',
 
     numberField: 'Number',

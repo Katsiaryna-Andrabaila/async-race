@@ -9,7 +9,6 @@ const getCars = async (page: number, limit = LIMITS_PER_PAGES.garageLimitPerPage
             items: await response.json(),
             amount: response.headers.get('X-Total-Count'),
         };
-        console.log(cars.amount);
         return cars;
     } catch {
         throw new Error(UI.errorMessage);

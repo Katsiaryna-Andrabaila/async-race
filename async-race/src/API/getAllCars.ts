@@ -9,7 +9,6 @@ const getAllCars = async (): Promise<CarsOnPage> => {
             items: await response.json(),
             amount: response.headers.get('X-Total-Count'),
         };
-        console.log(cars.amount);
         return cars;
     } catch {
         throw new Error(UI.errorMessage);

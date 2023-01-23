@@ -13,7 +13,6 @@ const driveCar = async (id: number, btn: HTMLButtonElement) => {
 
     const startResponse = await startEngine(id);
     const carTime = Math.round(startResponse.distance / startResponse.velocity);
-    console.log(carTime);
 
     const car = btn.nextSibling?.nextSibling;
     const flag = car?.nextSibling;

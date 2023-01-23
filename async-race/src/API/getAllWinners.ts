@@ -9,7 +9,6 @@ const getAllWinners = async (): Promise<WinnersOnPage> => {
             items: await response.json(),
             amount: response.headers.get('X-Total-Count'),
         };
-        console.log(winners);
         return winners;
     } catch {
         throw new Error(UI.errorMessage);
