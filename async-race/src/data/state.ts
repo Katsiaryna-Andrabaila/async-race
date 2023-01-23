@@ -4,6 +4,8 @@ const state: State = {
     page: 1,
     raceAnimationIDs: {},
     winnerPage: 1,
+    sort: '',
+    order: '',
 };
 
 /* let cars: Car[] = [];

@@ -37,6 +37,8 @@ export interface State {
     page: number;
     raceAnimationIDs: RaceAnimationIDs;
     winnerPage: number;
+    sort: string;
+    order: string;
 }
 
 export type RaceAnimationIDs = {

@@ -1,3 +1,5 @@
+import { ARROWS } from '../data/constants';
+import state from '../data/state';
 import UI from '../data/UI';
 
 const drawWinnersTableFields = (parent: HTMLDivElement) => {
@@ -18,11 +20,21 @@ const drawWinnersTableFields = (parent: HTMLDivElement) => {
 
     const winsField = document.createElement('span');
     winsField.classList.add('table-field', 'wins-field');
-    winsField.textContent = UI.winsField;
 
     const timeField = document.createElement('span');
     timeField.classList.add('table-field', 'time-field');
-    timeField.textContent = UI.timeField;
+
+    const orderSign = state.order === 'ASC' ? ARROWS.up : ARROWS.down;
+    if (state.sort === 'wins') {
+        winsField.textContent = `${UI.winsField} ${orderSign}`;
+        timeField.textContent = UI.timeField;
+    } else if (state.sort === 'time') {
+        timeField.textContent = `${UI.timeField} ${orderSign}`;
+        winsField.textContent = UI.winsField;
+    } else {
+        winsField.textContent = UI.winsField;
+        timeField.textContent = UI.timeField;
+    }
 
     tableFields.append(numberField, carField, nameField, winsField, timeField);
     parent.append(tableFields);

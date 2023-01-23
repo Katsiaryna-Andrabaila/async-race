@@ -6,7 +6,7 @@ import driveEngine from '../API/driveEngine';
 import disableStartButtons from './disableStartButtons';
 import { RaceParams } from '../data/types';
 
-async function startRace(btn: HTMLButtonElement) {
+const startRace = async (btn: HTMLButtonElement) => {
     btn.setAttribute('disabled', 'disabled');
     btn.classList.add('inactive');
 
@@ -44,6 +44,6 @@ async function startRace(btn: HTMLButtonElement) {
             });
         }
     });
-}
+};
 
 export default startRace;

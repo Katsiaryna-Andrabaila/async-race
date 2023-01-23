@@ -1,13 +1,13 @@
 import createCar from '../API/createCar';
 import getRandomColor from '../components/getRandomColor';
 import getRandomModel from '../components/getRandomModel';
-import { generatedAmount } from '../data/constants';
+import { GENERATED_AMOUNT } from '../data/constants';
 import drawFooter from '../layouts/drawFooter';
 import drawGarage from '../layouts/drawGarage';
 
 const generateCars = async () => {
     const array = [];
-    for (let i = 0; i < generatedAmount; i += 1) {
+    for (let i = 0; i < GENERATED_AMOUNT; i += 1) {
         array.push({ name: getRandomModel(), color: getRandomColor() });
     }
     console.log(array);

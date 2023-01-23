@@ -4,6 +4,7 @@ import drawWinnersList from './drawWinnersList';
 import state from '../data/state';
 import getAllWinners from '../API/getAllWinners';
 import drawWinnersPageButtons from './drawWinnersPageButtons';
+import getWinnersSorted from '../API/getWinnersSorted';
 
 const drawWinnersTable = async () => {
     document.querySelector('main')?.remove();
@@ -24,7 +25,10 @@ const drawWinnersTable = async () => {
     table.classList.add('winners-table');
 
     drawWinnersTableFields(table);
-    drawWinnersList(table).then(async () => {
+
+    const winners = await getWinnersSorted(state.winnerPage);
+
+    drawWinnersList(table, winners.items).then(async () => {
         const winnersAmount = (await getAllWinners()).items.length;
         winnersHeader.textContent = `${UI.winnersHeader}(${winnersAmount})`;
 

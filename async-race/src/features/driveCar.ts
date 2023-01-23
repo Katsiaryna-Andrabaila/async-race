@@ -10,8 +10,6 @@ const driveCar = async (id: number, btn: HTMLButtonElement) => {
         btn.nextSibling.classList.remove('inactive');
         btn.nextSibling.removeAttribute('disabled');
     }
-    const raceBtn = <HTMLButtonElement>document.querySelector('.race-button');
-    raceBtn.classList.add('inactive');
 
     const startResponse = await startEngine(id);
     const carTime = Math.round(startResponse.distance / startResponse.velocity);
