@@ -1,17 +1,15 @@
 import resetRace from './resetRace';
 import startRace from './startRace';
 import generateCars from './generateCars';
-import drawGarage from '../layouts/drawGarage';
 import selectCar from './selectCar';
-import deleteCar from '../API/deleteCar';
 import driveCar from './driveCar';
 import stopCar from './stopCar';
-import drawFooter from '../layouts/drawFooter';
 import createCarListener from './createCarListener';
-import drawNextPage from './drawNextPage';
-import drawPreviousPage from './drawPreviousPage';
+import drawNextPage from '../layouts/drawNextPage';
+import drawPreviousPage from '../layouts/drawPreviousPage';
+import deleteCarListener from './deleteCarListener';
 
-const act = (event: Event) => {
+const actGarage = (event: Event) => {
     const { target } = event;
     if (target instanceof HTMLButtonElement) {
         const id = target.closest('.car-item')?.getAttribute('data-id');
@@ -31,9 +29,7 @@ const act = (event: Event) => {
             selectCar(Number(id), target);
         }
         if (target.classList.contains('remove-button')) {
-            deleteCar(Number(id));
-            drawGarage();
-            drawFooter();
+            deleteCarListener(Number(id));
         }
         if (target.classList.contains('engine-button')) {
             driveCar(Number(id), target);
@@ -50,4 +46,4 @@ const act = (event: Event) => {
     }
 };
 
-export default act;
+export default actGarage;

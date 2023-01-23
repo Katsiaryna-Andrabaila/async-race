@@ -4,16 +4,18 @@ import state from '../data/state';
 import animateCar from './animateCar';
 import driveEngine from '../API/driveEngine';
 import disableStartButtons from './disableStartButtons';
+// import { LIMITS_PER_PAGES } from '../data/constants';
 
 const startRace = async (btn: HTMLButtonElement) => {
     btn.setAttribute('disabled', 'disabled');
     btn.classList.add('inactive');
 
     const cars = await getCars(state.page);
+    console.log(cars);
     const carsOnPage = <NodeListOf<HTMLDivElement>>document.querySelectorAll('.car');
     let targetCar = carsOnPage[0];
     const startPromises: Promise<{ velocity: number; distance: number }>[] = [];
-    cars.items.forEach(async (el) => startPromises.push(startEngine(el.id)));
+    cars.items.forEach((el) => startPromises.push(startEngine(el.id)));
     Promise.all(startPromises).then(() => {
         disableStartButtons();
         cars.items.forEach(async (el) => {
@@ -25,7 +27,6 @@ const startRace = async (btn: HTMLButtonElement) => {
                     targetCar = item;
                 }
             });
-
             const flag = targetCar?.nextSibling;
             if (flag instanceof HTMLImageElement) {
                 animateCar(el.id, targetCar, flag, carTime);

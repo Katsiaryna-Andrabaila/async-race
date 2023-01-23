@@ -1,9 +1,11 @@
 import UI from '../data/UI';
-import winners from '../data/winners';
 import drawWinnersTableFields from './drawWinnersTableFields';
 import drawWinnersList from './drawWinnersList';
+import state from '../data/state';
+import getAllWinners from '../API/getAllWinners';
+import drawWinnersPageButtons from './drawWinnersPageButtons';
 
-const drawWinnersTable = () => {
+const drawWinnersTable = async () => {
     document.querySelector('main')?.remove();
     document.querySelector('footer')?.remove();
     const main = document.createElement('main');
@@ -12,28 +14,27 @@ const drawWinnersTable = () => {
 
     const winnersHeader = document.createElement('h1');
     winnersHeader.classList.add('garage-header');
-    winnersHeader.textContent = `${UI.winnersHeader}(${winners.length})`;
+
     const pageNumber = document.createElement('h3');
     pageNumber.classList.add('page-number');
-    pageNumber.textContent = UI.pageNumber;
+    pageNumber.textContent = `Page #${state.winnerPage}`;
     main.append(winnersHeader, pageNumber);
 
     const table = document.createElement('div');
     table.classList.add('winners-table');
 
     drawWinnersTableFields(table);
-    drawWinnersList(table);
+    drawWinnersList(table).then(async () => {
+        const winnersAmount = (await getAllWinners()).items.length;
+        winnersHeader.textContent = `${UI.winnersHeader}(${winnersAmount})`;
 
-    const pageButtons = document.createElement('div');
-    pageButtons.classList.add('page-buttons');
-    const prevBtn = document.createElement('button');
-    prevBtn.classList.add('button', 'winners-prev-page-button');
-    prevBtn.textContent = UI.prevButton;
-    const nextBtn = document.createElement('button');
-    nextBtn.classList.add('button', 'winners-next-page-button');
-    nextBtn.textContent = UI.nextButton;
-    pageButtons.append(prevBtn, nextBtn);
-    main.append(table, pageButtons);
+        const pageButtons = document.createElement('div');
+        pageButtons.classList.add('page-buttons', 'winners-page-buttons');
+
+        drawWinnersPageButtons(pageButtons, winnersAmount);
+
+        main.append(table, pageButtons);
+    });
 };
 
 export default drawWinnersTable;

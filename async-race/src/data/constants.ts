@@ -10,3 +10,5 @@ export const LIMITS_PER_PAGES: { readonly [x: string]: number } = {
 export const defaultColor = '#000000';
 
 export const MILLISECONDS_IN_SECOND = 1000;
+
+export const winnersTableCarHeight = '17.000000pt';

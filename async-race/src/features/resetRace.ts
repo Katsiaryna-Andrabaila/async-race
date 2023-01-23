@@ -7,6 +7,9 @@ const resetRace = async (btn: HTMLButtonElement) => {
     btn.setAttribute('disabled', 'disabled');
     btn.classList.add('inactive');
 
+    const winnerMessage = <HTMLParagraphElement>document.querySelector('.winner-message');
+    winnerMessage.remove();
+
     const cars = await getCars(state.page);
     const carsOnPage = <NodeListOf<HTMLDivElement>>document.querySelectorAll('.car');
     disableStopButtons();

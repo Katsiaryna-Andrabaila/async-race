@@ -1,10 +1,13 @@
 import { MILLISECONDS_IN_SECOND } from '../data/constants';
+import { Car } from '../data/types';
+import processWinner from './processWinner';
 
-const showWinnerMessage = (carName: string, time: number) => {
+const showWinnerMessage = (car: Car, time: number) => {
     const visibleMessage = document.querySelector('.winner-message');
     if (visibleMessage) return;
+    processWinner(car, time);
 
-    const messageText = `${carName} went first in ${(time / MILLISECONDS_IN_SECOND).toFixed(2)} seconds!`;
+    const messageText = `${car.name} went first in ${(time / MILLISECONDS_IN_SECOND).toFixed(2)} seconds!`;
     const message = document.createElement('p');
     message.classList.add('winner-message');
     message.textContent = messageText;

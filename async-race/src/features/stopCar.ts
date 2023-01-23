@@ -8,12 +8,16 @@ const stopCar = async (id: number, btn: HTMLButtonElement) => {
         btn.previousSibling.classList.remove('inactive');
         btn.previousSibling.removeAttribute('disabled');
     }
+
     await stopEngine(id);
     const car = btn.nextSibling;
     if (car instanceof HTMLDivElement) {
         car.style.transform = `translateX(0)`;
         window.cancelAnimationFrame(state.raceAnimationIDs[id]);
     }
+
+    const winnerMessage = <HTMLParagraphElement>document.querySelector('.winner-message');
+    winnerMessage.remove();
 
     const stopButtons = <NodeListOf<HTMLButtonElement>>document.querySelectorAll('.stop-button');
     const stopButtonsArray: HTMLButtonElement[] = [];

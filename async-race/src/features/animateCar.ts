@@ -1,6 +1,5 @@
 import getCars from '../API/getCars';
 import state from '../data/state';
-import processWinner from './processWinner';
 import showWinnerMessage from './showWinnerMessage';
 
 const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageElement, time: number) => {
@@ -30,8 +29,7 @@ const animateCar = async (id: number, carItem: HTMLDivElement, flag: HTMLImageEl
             animationID = window.requestAnimationFrame(step);
             state.raceAnimationIDs[id] = animationID;
         } else if (targetCar) {
-            showWinnerMessage(targetCar.name, time);
-            processWinner(targetCar, time);
+            showWinnerMessage(targetCar, time);
         }
     };
     window.requestAnimationFrame(step);

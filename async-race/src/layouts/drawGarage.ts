@@ -24,7 +24,6 @@ const drawGarage = async () => {
     raceLines.classList.add('race-lines');
     drawRaceLines(raceLines).then(async () => {
         const carsAmount = (await getCars(state.page)).amount;
-
         garageHeader.textContent = `${UI.garageHeader}(${carsAmount})`;
 
         const pageButtons = document.createElement('div');
