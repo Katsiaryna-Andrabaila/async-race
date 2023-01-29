@@ -39,7 +39,6 @@ const baseConfig = {
             patterns: [
                 { from: 'src/API', to: './API' },
                 { from: 'src/assets', to: './assets' },
-                { from: 'src/components', to: './components' },
                 { from: 'src/data', to: './data' },
                 { from: 'src/features', to: './features' },
                 { from: 'src/layouts', to: './layouts' },

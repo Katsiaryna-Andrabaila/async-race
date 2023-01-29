@@ -1,4 +1,12 @@
-const getRandomColor = () => {
+import { brands, models } from '../data/randomData';
+
+export const getRandomModel = () => {
+    const randomBrand = Math.floor(Math.random() * brands.length);
+    const randomModel = Math.floor(Math.random() * models.length);
+    return `${brands[randomBrand]} ${models[randomModel]}`;
+};
+
+export const getRandomColor = () => {
     const getRandom = (min: number, max: number) => Math.ceil(Math.random() * (max - min) + min);
     const rgbMin = 0;
     const rgbMax = 255;
@@ -9,5 +17,3 @@ const getRandomColor = () => {
 
     return `#${redComponent}${greenComponent}${blueComponent}`;
 };
-
-export default getRandomColor;

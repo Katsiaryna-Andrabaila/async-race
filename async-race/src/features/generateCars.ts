@@ -1,6 +1,5 @@
 import createCar from '../API/createCar';
-import getRandomColor from '../components/getRandomColor';
-import getRandomModel from '../components/getRandomModel';
+import { getRandomColor, getRandomModel } from '../services/utils';
 import { GENERATED_AMOUNT } from '../data/constants';
 import drawFooter from '../layouts/drawFooter';
 import drawGarage from '../layouts/drawGarage';
