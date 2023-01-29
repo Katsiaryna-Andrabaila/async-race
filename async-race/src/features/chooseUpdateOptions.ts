@@ -17,7 +17,7 @@ const chooseUpdateOptions = async (
         state.updateInputText = carName.value;
         state.updateColor = carColor.value;
         const body: NewCar = { name: carName.value, color: carColor.value };
-        console.log(body, carName.value, carColor.value);
+
         updateCar(id, body);
         drawGarage();
         drawFooter();
