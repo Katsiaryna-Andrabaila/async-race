@@ -17,3 +17,5 @@ export const ARROWS = {
     up: '↑',
     down: '↓',
 };
+
+export const SUCCESS_DRIVE_CODE = 200;
