@@ -1,0 +1,100 @@
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 8rem;
+    padding: 1rem 2rem;
+}
+
+.create-block,
+.update-block {
+    display: flex;
+    align-items: center;
+}
+
+.garage-header {
+    margin: 1rem 0;
+
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.page-number {
+    margin: 0;
+
+    font-size: 1.8rem;
+}
+
+.race-lines {
+    min-height: 40rem;
+}
+
+.car-item {
+    margin: 0.5rem 0;
+}
+
+.car-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.car-name {
+    font-size: 1.4rem;
+    color: $color-additional;
+}
+
+.drive-block {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    width: 100%;
+    border-bottom: 0.3rem dotted $color-additional;
+}
+
+.car {
+    width: 8rem;
+
+    transition-timing-function: linear;
+}
+
+.flag {
+    position: absolute;
+    right: 13rem;
+
+    width: 4rem;
+}
+
+.page-buttons {
+    margin-top: 2rem;
+}
+
+.winner-message {
+    display: none;
+}
+
+.visible {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: block;
+
+    font-size: 2.4rem;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    color: rgb(219, 78, 78);
+
+    transform: translate(-50%, 0);
+}
+
+.main_winners {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 50rem;
+}
+

@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    gap: 2rem;
+
+    background-color: $color-primary;
+}
+
+.github-link,
+.footer-year,
+.rs-link {
+    font-size: 1.6rem;
+    color: $color-gray_light;
+}
+
+.github-link {
+    line-height: 35px;
+}
+
+.rs-link {
+    @include size(60px, 30px);
+    background-image: url('https://rs.school/images/rs_school_js.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+

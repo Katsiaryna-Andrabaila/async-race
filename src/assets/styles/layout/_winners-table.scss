@@ -1,0 +1,36 @@
+.table-fields {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr 2fr 4fr;
+
+    width: 85%;
+
+    background-color: $color-blue;
+
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.winner-line {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr 2fr 4fr;
+
+    width: 85%;
+
+    font-size: 2rem;
+    color: $color-additional;
+}
+
+.winner-image {
+    width: 4rem;
+    //margin-right: 5rem;
+}
+
+.wins-field,
+.time-field {
+    cursor: pointer;
+}
+
+.wins-field:hover,
+.time-field:hover {
+    background-color: $color-primary;
+}
